@@ -1,0 +1,16 @@
+:root {
+  --main-bg-color: #fff;
+	--secondary-bg-color: #F5F5F5;
+  --lightGrey-bg-color: #F9F9F9;
+  --promo-bg-color:#5C5C5C;
+	--footer-bg-color: #FAFAFA;
+  --burgerPopup-bg-color: rgba(0, 0, 0, .3); 
+	--scheme-bg-color: #F2F2F2;
+  --movieCard-bg-color:  #FDFDFD;
+  --accent-green-color: #2BE080;
+  --main-text-color: #000;
+  --accent-text-color:#fff;
+  --secondary-text-color: #A0A0A0;
+  --alarm-form-color: #EE3465;
+	--border-bottom-color: #E8E8E8;
+}
