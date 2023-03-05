@@ -1,0 +1,22 @@
+.redirection-link-area {
+  display: flex;
+  gap: 6px;
+	margin: 16px auto 0;
+}
+
+.redirection-link-area__question {
+	margin-block-start: 0;
+	margin-block-end: 0;
+	color: var(--secondary-text-color);
+	font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+}
+
+@media screen and (max-width: 400px) {
+  .redirection-link-area__question {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

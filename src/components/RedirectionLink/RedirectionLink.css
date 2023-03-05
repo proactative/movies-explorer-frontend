@@ -1,0 +1,21 @@
+.redirection-link {
+  color: var(--accent-green-color);
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  transition: text-decoration .3s linear;
+}
+
+.redirection-link:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 400px) {
+  .redirection-link {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
