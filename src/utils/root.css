@@ -6,7 +6,8 @@
 	--footer-bg-color: #FAFAFA;
   --burgerPopup-bg-color: rgba(0, 0, 0, .3); 
 	--scheme-bg-color: #F2F2F2;
-  --movieCard-bg-color:  #FDFDFD;
+  --moviesCard-bg-color:  #FDFDFD;
+  --moviesCard-boxShadow-color: rgba(0, 0, 0, .08);
   --accent-green-color: #2BE080;
   --main-text-color: #000;
   --accent-text-color:#fff;
