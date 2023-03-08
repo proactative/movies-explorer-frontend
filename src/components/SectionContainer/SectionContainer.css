@@ -1,6 +1,6 @@
 .section-container {
   box-sizing: border-box;
-  padding: 110px 0;
+  padding: 100px 0 110px;
   width: 1140px;
   margin: 0 auto;
   display: flex;
@@ -23,20 +23,20 @@
 @media screen and (max-width: 1200px) {
   .section-container {
     width: 100%;
-    padding: 90px 50px;
+    padding: 80px 50px 90px;
   }
 }
 
 @media screen and (max-width: 670px) {
   .section-container {
     width: 100%;
-    padding: 60px 50px;
+    padding: 50px 50px 60px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .section-container {
-    padding: 70px 18px;
+    padding: 60px 18px 70px;
   }
   
   .section-container__title {
