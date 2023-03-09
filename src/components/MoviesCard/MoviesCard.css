@@ -1,6 +1,6 @@
 .movies-card {
   min-height: 271px;
-  width: 364px;
+  min-width: 364px;
   box-shadow: 0px 4px 30px var(--moviesCard-boxShadow-color);
   background-color: var(--moviesCard-bg-color);
 }
@@ -79,13 +79,13 @@
 @media screen and (max-width: 768px) {
   .movies-card {
     min-height: 258px;
-    width: 339px;
+    min-width: 339px;
   }
 }
 
 @media screen and (max-width: 400px) {
   .movies-card {
     min-height: 235px;
-    width: 300px;
+    min-width: 300px;
   }
 }
