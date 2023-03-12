@@ -16,6 +16,7 @@
   min-width: 270px;
   height: 327px;
   object-fit: cover;
+  object-position: top center;
   border-radius: 10px;
 }
 
@@ -103,7 +104,6 @@
 @media screen and (max-width: 640px) {
   .about-me {
     padding-top: 11px;
-    margin-left: -3px;
   }
 
   .about-me__image {

@@ -18,7 +18,7 @@
 }
 
 .navigation-promo__link:hover {
-  border: 1px solid var(--accent-text-color);
+  /* border: 1px solid var(--accent-text-color); */
   box-shadow: 0 0 15px var(--accent-text-color);
 }
 
@@ -29,7 +29,7 @@
 }
 
 .navigation-promo__link:last-of-type:hover {
-  border: 1px solid var(--accent-text-color);
+  /* border: 1px solid var(--accent-text-color); */
   box-shadow: 0 0 15px var(--accent-text-color);
   color: var(--accent-text-color);
 }
