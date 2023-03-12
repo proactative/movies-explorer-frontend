@@ -3,8 +3,8 @@ import './Movies.css'
 import Header from '../Header/Header'
 import Navigation from '../Navigation/Navigation'
 import SearchForm from '../SearchForm/SearchForm'
-import Preloader from '../Preloader/Preloader'
-// import MoviesCardList from '../MoviesCardList/MoviesCardList';
+// import Preloader from '../Preloader/Preloader'
+import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import LazyLoadingButton from '../LazyLoadingButton/LazyLoadingButton'
 import Footer from '../Footer/Footer'
 import BurgerPopup from '../BurgerPopup/BurgerPopup'
@@ -27,8 +27,8 @@ function Movies() {
       </Header>
       <div className="movies__content">
         <SearchForm />
-        <Preloader />
-        {/* <MoviesCardList /> */}
+        {/* <Preloader /> */}
+        <MoviesCardList />
         <LazyLoadingButton />
       </div>
       <Footer />
@@ -38,6 +38,7 @@ function Movies() {
           !burgerClicked ? 'burger-popup' : 'burger-popup burger-popup_opened'
         }
       />
+      
     </div>
   )
 }

@@ -17,13 +17,13 @@
 }
 
 @media screen and (max-width: 1150px) {
-  .saved-movies {
+  .saved-movies, .saved-movies_fixed-height{
     padding: 0 30px;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .saved-movies {
+  .saved-movies, .saved-movies_fixed-height {
     padding: 0 10px;
   }
 }

@@ -8,11 +8,11 @@ function MoviesCardList() {
         <li><MoviesCard /></li>
         <li><MoviesCard /></li>
         <li><MoviesCard /></li>
+        {/* <li><MoviesCard /></li>
+        <li><MoviesCard /></li> */}
+        {/* <li><MoviesCard /></li>
         <li><MoviesCard /></li>
-        <li><MoviesCard /></li>
-        <li><MoviesCard /></li>
-        <li><MoviesCard /></li>
-        <li><MoviesCard /></li> 
+        <li><MoviesCard /></li>  */}
         {/* <li><MoviesCard /></li>
         <li><MoviesCard /></li>
         <li><MoviesCard /></li>

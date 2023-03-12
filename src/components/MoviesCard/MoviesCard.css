@@ -76,14 +76,14 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   .movies-card {
     min-height: 258px;
     min-width: 339px;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 767px) {
   .movies-card {
     min-height: 235px;
     min-width: 300px;

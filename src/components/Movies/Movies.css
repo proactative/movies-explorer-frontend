@@ -18,13 +18,13 @@
 }
 
 @media screen and (max-width: 1150px) {
-  .movies {
+  .movies, .movies_fixed-height {
     padding: 0 30px;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .movies {
+  .movies, .movies_fixed-height {
     padding: 0 10px;
   }
 }

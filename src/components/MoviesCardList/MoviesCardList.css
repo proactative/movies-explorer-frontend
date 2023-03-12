@@ -14,15 +14,16 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1200px) {
   .movies-card-list {
     grid-template-columns: repeat(2, minmax(339px, 1fr));
+    padding: 82px 0 76px;
     column-gap: 30px;
     row-gap: 34px;
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 767px) {
   .movies-card-list {
     grid-template-columns: minmax(300px, 1fr);
     padding: 51px 0 76px;

@@ -4,7 +4,6 @@ import './MoviesCard.css';
 import moviesCardImage from '../../images/movieCardImage.jpg';
 
 function MoviesCard() {
-
   const location = useLocation();
 
   const movieButton = location.pathname === '/saved-movies'
@@ -16,7 +15,7 @@ function MoviesCard() {
   : "кнопка сохранения в избранное";
 
   return (
-    <div className="movies-card">
+    <article className="movies-card">
       <div className="movies-card__info">
         <div className="movies-card__about">
           <h2 className="movies-card__title">33 слова о дизайне</h2>
@@ -25,7 +24,7 @@ function MoviesCard() {
         <button className={movieButton} aria-label={ariaLabel} type="button" />
       </div>
       <img src={moviesCardImage} className="movies-card__image" alt="постер фильма" />
-    </div>
+    </article>
   );
 }
   

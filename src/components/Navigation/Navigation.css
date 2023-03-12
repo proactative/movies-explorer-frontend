@@ -83,7 +83,8 @@
 
 @media screen and (max-width: 400px) {
   .navigation__burger-button {
-    width: 40px;
+    width: 30px;
     height: 43px;
+    margin-right: 8px;
   }
 }
