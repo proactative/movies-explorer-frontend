@@ -4,7 +4,7 @@
   --lightGrey-bg-color: #F9F9F9;
   --promo-bg-color:#5C5C5C;
 	--footer-bg-color: #FAFAFA;
-  --burgerPopup-bg-color: rgba(0, 0, 0, .3); 
+  --popup-bg-color: rgba(0, 0, 0, .3); 
 	--scheme-bg-color: #F2F2F2;
   --moviesCard-bg-color:  #FDFDFD;
   --moviesCard-boxShadow-color: rgba(0, 0, 0, .08);
@@ -14,4 +14,5 @@
   --secondary-text-color: #A0A0A0;
   --alarm-form-color: #EE3465;
 	--border-bottom-color: #E8E8E8;
+  scroll-behavior: smooth;
 }
