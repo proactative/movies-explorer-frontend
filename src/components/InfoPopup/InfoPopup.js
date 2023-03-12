@@ -6,7 +6,7 @@ function InfoPopup() {
     <div className="info-popup">
       <div className="info-popup__text-area">
         <h2 className="info-popup__text">Что-то пошло не так...</h2>
-        <button type="button" className="info-popup__close-button" />
+        <button type="button" className="info-popup__close-button"  aria-label="кнопка закрытия" />
       </div>
     </div>
   )

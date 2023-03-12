@@ -1,5 +1,5 @@
 import React from 'react'
-import './PageNotFound.css'
+import './NotFoundPage.css'
 import RedirectionLink from '../RedirectionLink/RedirectionLink'
 
 function PageNotFound() {

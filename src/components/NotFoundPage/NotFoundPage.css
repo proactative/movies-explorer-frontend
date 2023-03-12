@@ -33,6 +33,12 @@
   align-self: center;
 }
 
+@media screen and (max-width: 800px) {
+  .not-found__bottom {
+    bottom: 225px;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .not-found__title {
     font-size: 80px;
