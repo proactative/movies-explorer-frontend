@@ -213,4 +213,9 @@
     font-size: 12px;
     line-height: 15px;
   }
+
+  .profile__submit-button {
+    font-size: 12px;
+    line-height: 15px;
+  }
 }
