@@ -1,0 +1,118 @@
+.techs {
+  background-color: var(--secondary-bg-color);
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.techs__container {
+  width: 1140px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.techs__title {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1.16;
+  text-align: center;
+  letter-spacing: -0.04em;
+  margin-top: 90px;
+}
+
+.techs__subtitle {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43;
+  text-align: center;
+  letter-spacing: -0.01em;
+  margin: 26px 0 100px;
+  width: 460px;
+  letter-spacing: -0.04em;
+  align-self: center;
+}
+
+.techs__list {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  list-style: none;
+  max-width: 690px;
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  align-self: center;
+}
+
+.techs__item {
+  background-color: var(--border-bottom-color);
+  border-radius: 10px;
+  height: 60px;
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.04em;
+}
+
+@media screen and (max-width: 800px) {
+  .techs {
+   padding: 10px 0 0;
+  }
+
+  .techs__title {
+    margin-top: 80px;
+  }
+
+  .techs__subtitle {
+    margin: 22px 0 80px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .techs__item {
+    width: 84px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .techs__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .techs {
+    background-color: var(--main-bg-color);
+  }
+
+  .techs__title {
+    font-size: 30px;
+    line-height: 36px;
+    margin-top: 64px;
+  }
+
+  .techs__subtitle {
+    font-size: 11px;
+    line-height: 1.45;
+    width: 292px; 
+    margin: 22px 0 52px;
+  }
+
+  .techs__item {
+    height: 57px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

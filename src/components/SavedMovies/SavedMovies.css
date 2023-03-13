@@ -1,0 +1,29 @@
+.saved-movies {
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.saved-movies_fixed-height {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.saved-movies__content {
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 1150px) {
+  .saved-movies, .saved-movies_fixed-height{
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .saved-movies, .saved-movies_fixed-height {
+    padding: 0 10px;
+  }
+}
