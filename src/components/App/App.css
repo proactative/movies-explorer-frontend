@@ -1,0 +1,17 @@
+.app {
+  font-family: 'Inter', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  text-align: center;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--main-bg-color);
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
