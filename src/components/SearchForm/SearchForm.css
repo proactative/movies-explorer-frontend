@@ -4,7 +4,7 @@
   margin: 98px auto 0;
   padding-bottom: 37px;
   border-bottom: 1px solid var(--border-bottom-color);
-  max-width: 1140px;
+  width: 100%;
   box-sizing: border-box;
 }
 

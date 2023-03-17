@@ -47,7 +47,7 @@ function Login() {
   }
 
   return (
-    <div className="login">
+    <section className="login" aria-label="логин">
       <Logo />
       <AuthForm
         formTitle="Рады видеть!" 
@@ -83,7 +83,7 @@ function Login() {
         linkTitle="Регистрация"
         to="/signup"
       />
-    </div>
+    </section>
   )
 }
 

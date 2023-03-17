@@ -2,11 +2,13 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import './Header.css'
 import Logo from '../Logo/Logo'
+import Navigation from '../Navigation/Navigation'
+import NavigationPromo from '../NavigationPromo/NavigationPromo'
 
 function Header(props) {
   const location = useLocation()
   return (
-    <div
+    <header
       className={location.pathname === '/' ? 'header header_promo' : 'header'}
     >
       <div
@@ -17,9 +19,9 @@ function Header(props) {
         }
       >
         <Logo />
-        {props.children}
+        {location.pathname === '/' ? <NavigationPromo /> : <Navigation onBurgerButtonClick={props.onBurgerButtonClick} />}
       </div>
-    </div>
+    </header>
   )
 }
 

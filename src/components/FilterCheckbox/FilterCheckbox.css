@@ -25,7 +25,7 @@
   display: flex;
   padding: 0 2px;
   box-sizing: border-box;
-  transition: all 0.4 linear;
+  transition: all 0.4s linear;
 }
 
 .filter-checkbox__input {
@@ -41,7 +41,7 @@
   transition: all 0.4s linear;
   align-self: center;
   justify-items: end;
-  transition: all 0.4 linear;
+  transition: all 0.4s linear;
 }
 
 .filter-checkbox__circle_checked {

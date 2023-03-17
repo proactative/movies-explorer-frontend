@@ -21,25 +21,19 @@
   padding: 18px 10px 0 0;
 }
 
-@media screen and (max-width: 1170px) {
+@media screen and (max-width: 1200px) {
   .header__container_promo {
     padding: 18px 30px 0;
   }
-}
 
-@media screen and (max-width: 800px) {
   .header__container {
-    padding: 18px 0 0;
-  }
-
-  .header__container_promo {
     padding: 18px 30px 0;
   }
 }
 
 @media screen and (max-width: 400px) {
   .header__container {
-    padding: 18px 5px 0;
+    padding: 18px 14px 0;
   }
 
   .header__container_promo {

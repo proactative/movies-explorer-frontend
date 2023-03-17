@@ -10,10 +10,14 @@
 }
 
 .portfolio__links {
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
   display: flex;
   flex-direction: column;
   margin-top: 50px;
   text-align: left;
+  list-style: none; 
 }
 
 .portfolio__link {

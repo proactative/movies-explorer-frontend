@@ -6,7 +6,7 @@ import Portfolio from '../Portfolio/Portfolio'
 
 function AboutMe() {
   return (
-    <div className="about-me" id="about-me">
+    <section className="about-me" id="about-me">
       <SectionContainer title="Студент">
         <div className="about-me__profile">
           <div className="about-me__info">
@@ -36,7 +36,7 @@ function AboutMe() {
         </div>
         <Portfolio />
       </SectionContainer>
-    </div>
+    </section>
   )
 }
 

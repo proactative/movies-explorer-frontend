@@ -4,7 +4,7 @@ import './AboutProject.css'
 
 function AboutProject() {
   return (
-    <div className="about-project" id="about-project">
+    <section className="about-project" id="about-project">
       <SectionContainer title="O прoекте">
         <ul className="about-project__info">
           <li>
@@ -39,7 +39,7 @@ function AboutProject() {
           </li>
         </ul>
       </SectionContainer>
-    </div>
+    </section>
   )
 }
 

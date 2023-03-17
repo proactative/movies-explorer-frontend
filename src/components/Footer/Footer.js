@@ -1,18 +1,10 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
 import './Footer.css'
 
 function Footer() {
-  const location = useLocation()
   return (
-    <div className="footer">
-      <div
-        className={
-          location.pathname === '/'
-            ? 'footer__container'
-            : 'footer__container footer__container_movies'
-        }
-      >
+    <footer className="footer">
+      <div className="footer__container">
         <p className="footer__title">
           Учебный проект Яндекс.Практикум х BeatFilm.
         </p>
@@ -38,7 +30,7 @@ function Footer() {
           </nav>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
 

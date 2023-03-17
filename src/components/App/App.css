@@ -14,4 +14,15 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.app_fixed-height {
+  height: 100vh;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.app__content {
+  flex-grow: 1;
 }

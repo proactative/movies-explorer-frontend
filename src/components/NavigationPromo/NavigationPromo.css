@@ -15,22 +15,20 @@
   line-height: 1.33;
   box-sizing: border-box;
   transition: all 0.3s linear;
+  height: 32px;
 }
 
 .navigation-promo__link:hover {
-  /* border: 1px solid var(--accent-text-color); */
-  box-shadow: 0 0 15px var(--accent-text-color);
+  box-shadow: 0 0 5px var(--accent-text-color);
 }
 
 .navigation-promo__link:last-of-type {
   color: var(--main-text-color);
   background-color: var(--accent-green-color);
-  height: 32px;
 }
 
 .navigation-promo__link:last-of-type:hover {
-  /* border: 1px solid var(--accent-text-color); */
-  box-shadow: 0 0 15px var(--accent-text-color);
+  box-shadow: 0 0 5px var(--accent-text-color);
   color: var(--accent-text-color);
 }
 
@@ -44,9 +42,6 @@
     line-height: 1.6;
     padding: 5px 12px;
     margin-top: 6px;
-  }
-
-  .navigation-promo__link:last-of-type {
     height: 26px;
   }
 }

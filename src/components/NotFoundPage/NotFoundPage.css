@@ -35,7 +35,7 @@
 
 @media screen and (max-width: 800px) {
   .not-found__bottom {
-    bottom: 225px;
+    top: 785px;
   }
 }
 

@@ -4,7 +4,7 @@ import SectionContainer from '../SectionContainer/SectionContainer'
 
 function Techs() {
   return (
-    <div className="techs" id="techs">
+    <section className="techs" id="techs">
       <SectionContainer title="Технологии">
         <h2 className="techs__title">7 технологий</h2>
         <p className="techs__subtitle">
@@ -21,7 +21,7 @@ function Techs() {
           <li className="techs__item">mongoDB</li>
         </ul>
       </SectionContainer>
-    </div>
+    </section>
   )
 }
 

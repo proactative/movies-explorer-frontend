@@ -9,7 +9,7 @@
   margin-block-end: 0;
   padding-inline-start: 0;
   margin: 0 auto;
-  max-width: 1140px;
+  width: 100%;
   align-items: center;
   justify-content: center;
 }

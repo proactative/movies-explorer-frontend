@@ -61,7 +61,7 @@ function Register() {
   }
   
   return (
-    <div className="register">
+    <section className="register" aria-label="регистрация">
       <Logo />
       <AuthForm 
       formTitle="Добро пожаловать!" 
@@ -109,7 +109,7 @@ function Register() {
         linkTitle="Войти"
         to="/signin"
       />
-    </div>
+    </section>
   )
 }
 

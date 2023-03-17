@@ -1,4 +1,9 @@
-.lazy-Loading-button {
+.lazy-loading {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.lazy-loading__button {
   width: 100%;
   border: var(--lightGrey-bg-color);
   margin-bottom: 106px;
@@ -9,20 +14,16 @@
   line-height: 15px;
   background-color: var(--lightGrey-bg-color);
   cursor: pointer;
-  transition: background-color .3s linear;
+  transition: background-color 0.3s linear;
+  padding: 0;
 }
 
-.lazy-Loading-button:hover {
-	background-color: var(--border-bottom-color);
-}
-
-.lazy-Loading-button__area {
-	max-width: 1140px;
-	margin: 0 auto;
+.lazy-loading__button:hover {
+  background-color: var(--border-bottom-color);
 }
 
 @media screen and (max-width: 768px) {
-  .lazy-Loading-button {
+  .lazy-loading__button {
     margin-bottom: 121px;
   }
 }

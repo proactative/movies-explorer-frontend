@@ -1,12 +1,8 @@
 import React from 'react'
 import './Profile.css'
-import Header from '../Header/Header'
-import Navigation from '../Navigation/Navigation'
 import { Link } from 'react-router-dom'
-import BurgerPopup from '../BurgerPopup/BurgerPopup'
 
 function Profile() {
-  const [burgerClicked, setBurgerClicked] = React.useState(false)
   const [editMode, setEditMode] = React.useState(false)
   const [isActiveInput, setIsActiveInput] = React.useState('disabled')
   const [isEmailInputValid, setIsEmailInputValid] = React.useState(true)
@@ -55,24 +51,13 @@ function Profile() {
     setIsActiveInput('disabled')
   }
 
-  function handleBurgerIconClick() {
-    setBurgerClicked(true)
-  }
-
-  function handleCloseIconClick() {
-    setBurgerClicked(false)
-  }
-
   return (
-    <div className="profile">
-      <Header>
-        <Navigation onBurgerButtonClick={handleBurgerIconClick} />
-      </Header>
+    <section className="profile" aria-label="профиль">
       <h2 className="profile__title">Привет,&nbsp;{user}!</h2>
       <form className="profile__form">
         <fieldset className="profile__fieldset">
           <label className="profile__label">
-            <p className="profile__label-text">Имя</p>
+            <span className="profile__label-text">Имя</span>
             <input
               className="profile__input"
               minLength="2"
@@ -88,7 +73,7 @@ function Profile() {
             <span className="profile__error-span">{userInputErrorMessage}</span>
           </label>
           <label className="profile__label">
-            E&#8209;mail
+          <span className="profile__label-text">E&#8209;mail</span>
             <input
               className="profile__input"
               type="email"
@@ -123,13 +108,7 @@ function Profile() {
           Выйти из аккаунта
         </Link> }
       </div>
-      <BurgerPopup
-        onCloseIconClick={handleCloseIconClick}
-        className={
-          !burgerClicked ? 'burger-popup' : 'burger-popup burger-popup_opened'
-        }
-      />
-    </div>
+    </section>
   )
 }
 
