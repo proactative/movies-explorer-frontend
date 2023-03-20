@@ -19,7 +19,7 @@ function Header(props) {
         }
       >
         <Logo />
-        {location.pathname === '/' ? <NavigationPromo /> : <Navigation onBurgerButtonClick={props.onBurgerButtonClick} />}
+        { !props.loggedIn ? <NavigationPromo /> : <Navigation onBurgerButtonClick={props.onBurgerButtonClick} />}
       </div>
     </header>
   )
