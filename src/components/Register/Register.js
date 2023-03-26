@@ -5,103 +5,88 @@ import AuthForm from '../AuthForm/AuthForm'
 import AuthFormLabel from '../AuthFormLabel/AuthFormLabel'
 import RedirectionLinkArea from '../RedirectionLinkArea/RedirectioLinkArea'
 
-function Register() {
-  const [user, setUser] = React.useState('')
-  const [email, setEmail] = React.useState('')
-  const [password, setPassword] = React.useState('')
-  const [isUserInputValid, setIsUserInputValid] = React.useState(false)
-  const [isEmailInputValid, setIsEmailInputValid] = React.useState(false)
-  const [isPasswordInputValid, setIsPasswordInputValid] = React.useState(false)
-  const [userInputErrorMessage, setUserInputErrorMessage] = React.useState('')
-  const [emailInputErrorMessage, setEmailInputErrorMessage] = React.useState('')
-  const [passwordInputErrorMessage, setPasswordInputErrorMessage] = React.useState('')
+function Register(props) {
+  const [values, setValues] = React.useState({});
+  const [errors, setErrors] = React.useState({});
   const [isFormValid, setIsFormValid] = React.useState(false)
-
-  function handleUserInputChange(e) {
-    if (e.target.validity.valid) {
-      setIsUserInputValid(true)
-      setUserInputErrorMessage('')
-    } else {
-      setIsUserInputValid(false)
-      setUserInputErrorMessage(e.target.validationMessage)
-    }
-    setUser(e.target.value);
-  }
-
-  function handleEmailInputChange(e) {
-    if (e.target.validity.valid) {
-      setIsEmailInputValid(true)
-      setEmailInputErrorMessage('')
-    } else {
-      setIsEmailInputValid(false)
-      setEmailInputErrorMessage(e.target.validationMessage)
-    }
-    setEmail(e.target.value);
-  }
-
-  function handlePasswordInputChange(e) {
-    if (e.target.validity.valid) {
-      setIsPasswordInputValid(true)
-      setPasswordInputErrorMessage('')
-    } else {
-      setIsPasswordInputValid(false)
-      setPasswordInputErrorMessage(e.target.validationMessage)
-    }
-    setPassword(e.target.value);
-  }
-
-  React.useEffect(() => {
-    setIsFormValid( isUserInputValid && isEmailInputValid && isPasswordInputValid);
-  }, [isUserInputValid, isEmailInputValid, isPasswordInputValid]);
-
-  // alert is a temporary solution only for level-2
-  function handleSubmit(e) {
-    e.preventDefault();
-    isFormValid && alert('Форма принята');
-  }
   
+  const handleInputChange = (event) => {
+    const target = event.target;
+    const name = target.name;
+    const value = target.value;
+    setValues({...values, [name]: value});
+    setErrors({...errors, [name]: target.validationMessage });
+    setIsFormValid(target.closest("form").checkValidity());
+  };
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    if (isFormValid) {
+      props.handleRegister(values.user, values.email, values.password)
+    } else {
+      console.log('error')
+    }
+  }
+
   return (
     <section className="register" aria-label="регистрация">
       <Logo />
-      <AuthForm 
-      formTitle="Добро пожаловать!" 
-      buttonTitle="Зарегистрироваться" 
-      className={isFormValid ? "auth__form-button" : "auth__form-button auth__form-button_disabled"}
-      disabled={isFormValid ? "" : "disabled"}
-      onSubmitFunction={handleSubmit}
+      <AuthForm
+        formTitle="Добро пожаловать!"
+        buttonTitle="Зарегистрироваться"
+        className={
+          isFormValid
+            ? 'auth__form-button'
+            : 'auth__form-button auth__form-button_disabled'
+        }
+        disabled={isFormValid ? '' : 'disabled'}
+        onSubmitFunction={handleSubmit}
       >
         <AuthFormLabel
           labelText="Имя"
           type="text"
-          name="name"
-          id="name"
+          name="user"
+          id="user"
           minLength="2"
           maxLength="30"
-          value={user || ''}
-          onChancheHandler={handleUserInputChange}
-          errorMessage={userInputErrorMessage || ""}
-          inputClassName={isUserInputValid ? "auth-form-label__input" : "auth-form-label__input error"}
+          pattern="^[a-zA-Zа-яА-Я -]+$"
+          value={values.user || ''}
+          onChancheHandler={handleInputChange}
+          errorMessage={errors.user || ''}
+          inputClassName={
+            errors.user===""
+              ? 'auth-form-label__input'
+              : 'auth-form-label__input error'
+          }
         />
         <AuthFormLabel
           labelText="E-mail"
           type="email"
           name="email"
           id="email"
-          value={email || ''}
-          onChancheHandler={handleEmailInputChange}
-          errorMessage={emailInputErrorMessage || ""}
-          inputClassName={isEmailInputValid ? "auth-form-label__input" : "auth-form-label__input error"}
-          pattern='^.*@.+$'
+          value={values.email || ''}
+          onChancheHandler={handleInputChange}
+          errorMessage={errors.email || ''}
+          inputClassName={
+            errors.email===""
+              ? 'auth-form-label__input'
+              : 'auth-form-label__input error'
+          }
+          pattern="^.*@.+$"
         />
         <AuthFormLabel
           labelText="Пароль"
           type="password"
           name="password"
           id="password"
-          value={password || ''}
-          onChancheHandler={handlePasswordInputChange}
-          errorMessage={passwordInputErrorMessage || ""}
-          inputClassName={isPasswordInputValid ? "auth-form-label__input" : "auth-form-label__input error"}
+          value={values.password || ''}
+          onChancheHandler={handleInputChange}
+          errorMessage={errors.pasword || ''}
+          inputClassName={
+            errors.password===""
+              ? 'auth-form-label__input'
+              : 'auth-form-label__input error'
+          }
         />
       </AuthForm>
       <RedirectionLinkArea
