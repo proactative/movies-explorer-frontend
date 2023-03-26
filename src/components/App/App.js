@@ -224,10 +224,6 @@ function App() {
       })
   }
 
-  React.useEffect(() => {
-    handleDownloadSavedMovies()
-  }, [])
-
   function handleDownloadFilms(movieRequest) {
     setIsLoading(true)
     setWasSearched(true)
