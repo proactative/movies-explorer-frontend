@@ -155,15 +155,7 @@ function App() {
           })
         })
         .catch((err) => {
-          if (err.status === 401) {
-            setIsActionSuccess(false)
-            setInfoMessage(Info.MESSAGE_TOKEN_ERROR)
-            setInfoPopupShown(true)
-          } else {
-            setIsActionSuccess(false)
-            setInfoMessage(Info.MESSAGE_SERVER_ERROR)
-            setInfoPopupShown(true)
-          }
+          console.log(err)
         })
     }
   }
