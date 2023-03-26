@@ -6,10 +6,10 @@ const MESSAGE_TOKEN_ERROR =
   'При авторизации произошла ошибка. Токен не передан или передан не в том формате.'
 const MESSAGE_TOKEN_INCORRECT =
   'При авторизации произошла ошибка. Переданный токен некорректен.'
-const MESSAGE_PROFILE_SUCCESS = 'Ваш профиль успешно обнавлен.'
+const MESSAGE_PROFILE_SUCCESS = 'Ваш профиль успешно обновлен.'
 const MESSAGE_PROFILE_ERROR = 'При обновлении профиля произошла ошибка.'
 const MESSAGE_SERVER_ERROR ='На сервере произошла ошибка.'
-const MESSAGE_NOT_FOUND = '404 Страница по указанному маршруту не найдена.'
+const MESSAGE_LOADING_ERROR ='Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз'
 
 module.exports = {
   MESSAGE_PROFILE_SUCCESS,
@@ -21,5 +21,5 @@ module.exports = {
 	MESSAGE_TOKEN_ERROR,
 	MESSAGE_TOKEN_INCORRECT,
 	MESSAGE_SERVER_ERROR,
-	MESSAGE_NOT_FOUND
+  MESSAGE_LOADING_ERROR
 }
