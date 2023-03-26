@@ -1,18 +1,37 @@
 import React from 'react';
+import {useLocation} from 'react-router-dom'
 import './FilterCheckbox.css';
 
-function FilterCheckbox() {
-  const [isChecked, setIsChecked] =React.useState(false);
+function FilterCheckbox(props) {
+  const location = useLocation()
+  const [onlyShortFilms, setOnlyShortFilms] =React.useState(false);
 
   function onChange() {
-    setIsChecked(!isChecked);
+    if (location.pathname === '/movies') {
+    setOnlyShortFilms(!onlyShortFilms)
+    localStorage.setItem(
+      'onlyShortFilms',
+      JSON.stringify({
+        onlyShortFilms: !onlyShortFilms,
+      }),
+    )
+    } else {
+      setOnlyShortFilms(!onlyShortFilms)
+      localStorage.setItem(
+        'onlyShortSavedFilms',
+        JSON.stringify({
+          onlyShortFilms: !onlyShortFilms,
+        }),
+      )
+    }
+    props.toggleSearchShortFilms();
   }
 
   return (
     <div className="filter-checkbox">
       <input type="checkbox" onChange={onChange} className="filter-checkbox__input" id="filter" />
-      <label for="filter" className="filter-checkbox__label" >
-	      <span className={isChecked ? "filter-checkbox__circle filter-checkbox__circle_checked" : "filter-checkbox__circle"}></span>
+      <label htmlFor="filter" className="filter-checkbox__label" >
+	      <span className={onlyShortFilms ? "filter-checkbox__circle filter-checkbox__circle_checked" : "filter-checkbox__circle"}></span>
       </label>
 			<p className="filter-checkbox__subtitle">Короткометражки</p>
     </div>

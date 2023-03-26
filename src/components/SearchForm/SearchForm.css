@@ -57,6 +57,10 @@
   transition: background-size .3s linear;
 }
 
+.search-form__button_disabled {
+  background-color: var(--secondary-bg-color);
+}
+
 .search-form__button:hover { 
 	background-size: 55%;
 }

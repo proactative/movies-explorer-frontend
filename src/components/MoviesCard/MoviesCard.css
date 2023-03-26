@@ -108,3 +108,18 @@
     min-width: 300px;
   }
 }
+
+@media screen and (max-width: 420px) {
+  .movies-card__info {
+    height: 30%;
+  }
+
+  .movie-card__link {
+    height: 70%;
+  }
+
+  .movie-card__image {
+    height: 70%;
+  }
+}
+

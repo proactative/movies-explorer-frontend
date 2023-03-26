@@ -9,6 +9,16 @@
   min-height: 783px;
 }
 
+.saved-movies__warning {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: var(--accent-green-color);
+  margin-top: 30px;
+  font-size: 16px;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
 @media screen and (max-width: 1200px) {
   .saved-movies {
     padding: 0 30px;
@@ -21,5 +31,9 @@
   .saved-movies {
     padding: 0 10px;
     min-height: 995px;
+  }
+
+  .saved-movies__warning {
+    font-size: 13px;
   }
 }

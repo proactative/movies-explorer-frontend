@@ -5,7 +5,12 @@ import './MoviesCard.css'
 function MoviesCard(props) {
   const location = useLocation()
   const storageSavedMovies = JSON.parse(localStorage.getItem('SavedMoviesList'))
-    .savedMovies
+    ?.savedMovies
+
+  const movieImage =
+  location.pathname === '/saved-movies'
+    ? props.movie.image
+    : 'https://api.nomoreparties.co/' + props.movie.image.url
 
   const handleMoviePageButtonrender = props.isSaved
     ? 'movies-card__button movies-card__button_select movies-card__button_chosen'
@@ -69,7 +74,7 @@ function MoviesCard(props) {
         rel="noreferrer"
       >
         <img
-          src={'https://api.nomoreparties.co/' + props.movie.image.url}
+          src={movieImage}
           className="movies-card__image"
           alt={'постер фильма' + props.movie.nameRU}
         />

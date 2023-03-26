@@ -11,9 +11,7 @@ export const getAllMovies = () => {
   return fetch(`${MOVIES_URL}/`, {
     headers: {
       'Content-Type': 'application/json',
-
+      Authorization: `Bearer ${localStorage.getItem('jwt')}`,
     },
   }).then(getResponseData)
 }
-
- // Authorization: `Bearer ${localStorage.getItem('jwt')}`,
