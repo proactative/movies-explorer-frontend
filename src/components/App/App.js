@@ -1,5 +1,11 @@
 import React from 'react'
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
+import {
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+  Navigate,
+} from 'react-router-dom'
 import './App.css'
 import Header from '../Header/Header'
 import Register from '../Register/Register'
@@ -424,12 +430,25 @@ function App() {
             <Route
               path="/signup"
               element={
-                <Register handleRegister={handleRegister} loggedIn={loggedIn} />
+                loggedIn ? (
+                  <Navigate to="/" />
+                ) : (
+                  <Register
+                    handleRegister={handleRegister}
+                    loggedIn={loggedIn}
+                  />
+                )
               }
             />
             <Route
               path="/signin"
-              element={<Login handleLogin={handleLogin} />}
+              element={
+                loggedIn ? (
+                  <Navigate to="/" />
+                ) : (
+                  <Login handleLogin={handleLogin} />
+                )
+              }
             />
             <Route
               path="/movies"
