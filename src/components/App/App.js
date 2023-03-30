@@ -37,6 +37,7 @@ function App() {
   const [infoMessage, setInfoMessage] = React.useState('')
 
   //for movies
+  const [initialList, setInitialList] = React.useState([])
   const [isLoading, setIsLoading] = React.useState(false)
   const [isLoadingSaved, setIsLoadingSaved] = React.useState(false)
   const [wasSearched, setWasSearched] = React.useState(false)
@@ -78,6 +79,18 @@ function App() {
             onlyShortFilms: false,
           }),
         )
+        localStorage.setItem(
+          'onlyShortSavedFilms',
+          JSON.stringify({
+            onlyShortFilms: false,
+          }),
+        )
+        localStorage.setItem(
+          'MoviesList',
+          JSON.stringify({
+            filteredMovies: initialList,
+          }),
+        )
         handleDownloadSavedMovies()
       })
       .catch((err) => {
@@ -113,6 +126,12 @@ function App() {
       .then((data) => {
         MainApi.login(data.email, data.password)
         localStorage.setItem(
+          'MoviesList',
+          JSON.stringify({
+            filteredMovies: initialList,
+          }),
+        )
+        localStorage.setItem(
           'SavedMoviesList',
           JSON.stringify({
             savedMovies: savedMovies,
@@ -120,6 +139,12 @@ function App() {
         )
         localStorage.setItem(
           'onlyShortFilms',
+          JSON.stringify({
+            onlyShortFilms: false,
+          }),
+        )
+        localStorage.setItem(
+          'onlyShortSavedFilms',
           JSON.stringify({
             onlyShortFilms: false,
           }),
@@ -198,6 +223,7 @@ function App() {
     localStorage.removeItem('onlyShortFilms')
     localStorage.removeItem('onlyShortSavedFilms')
     localStorage.removeItem('movieRequest')
+    setInitialList([])
     setSavedMovies([])
     setRenderedListMovies([])
     setRenderedListSavedMovies([])
@@ -274,32 +300,49 @@ function App() {
       })
   }
 
+  React.useEffect(() => {
+    if (loggedIn) {
+    handleToggleSearchShortFilms()
+    } else {
+      console.log('checking')
+    }
+  }, [loggedIn])
+
+
+  React.useEffect(() => {
+    if (loggedIn) {
+      handleToggleSearchOnlyShortSavedFilms()
+    } else {
+      console.log('checking')
+    }
+  }, [loggedIn])
+  
   function handleToggleSearchShortFilms() {
     if (JSON.parse(localStorage.getItem('onlyShortFilms')).onlyShortFilms) {
       setRenderedListMovies(
-        JSON.parse(localStorage.getItem('MoviesList')).filteredMovies.filter(
+        JSON.parse(localStorage.getItem('MoviesList'))?.filteredMovies.filter(
           (item) => item.duration < Info.SHORT_MOVIES_DURATION_IN_MINUTES,
         ),
       )
     } else {
       setRenderedListMovies(
-        JSON.parse(localStorage.getItem('MoviesList')).filteredMovies,
+        JSON.parse(localStorage.getItem('MoviesList'))?.filteredMovies,
       )
     }
   }
 
-  function handleToggleSearchOnlyShortShortFilms() {
+  function handleToggleSearchOnlyShortSavedFilms() {
     if (
       JSON.parse(localStorage.getItem('onlyShortSavedFilms')).onlyShortFilms
-    ) {
+    ) { 
       setRenderedListSavedMovies(
-        JSON.parse(localStorage.getItem('SavedMoviesList')).savedMovies.filter(
+        JSON.parse(localStorage.getItem('SavedMoviesList'))?.savedMovies.filter(
           (item) => item.duration < Info.SHORT_MOVIES_DURATION_IN_MINUTES,
         ),
       )
     } else {
       setRenderedListSavedMovies(
-        JSON.parse(localStorage.getItem('SavedMoviesList')).savedMovies,
+        JSON.parse(localStorage.getItem('SavedMoviesList'))?.savedMovies,
       )
     }
   }
@@ -476,7 +519,7 @@ function App() {
                     removeLiked={handleRemoveLiked}
                     isLoading={isLoadingSaved}
                     toggleSearchShortFilms={
-                      handleToggleSearchOnlyShortShortFilms
+                      handleToggleSearchOnlyShortSavedFilms
                     }
                     downloadFilms={handleDownloadFilteredSavedMovies}
                   />

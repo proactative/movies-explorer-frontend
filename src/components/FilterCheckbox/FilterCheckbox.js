@@ -4,7 +4,8 @@ import './FilterCheckbox.css';
 
 function FilterCheckbox(props) {
   const location = useLocation()
-  const [onlyShortFilms, setOnlyShortFilms] =React.useState(false);
+  const [onlyShortFilms, setOnlyShortFilms] = React.useState(false);
+  const toggleView = location.pathname === '/movies' ? JSON.parse(localStorage.getItem('onlyShortFilms')).onlyShortFilms : false 
 
   function onChange() {
     if (location.pathname === '/movies') {
@@ -31,7 +32,7 @@ function FilterCheckbox(props) {
     <div className="filter-checkbox">
       <input type="checkbox" onChange={onChange} className="filter-checkbox__input" id="filter" />
       <label htmlFor="filter" className="filter-checkbox__label" >
-	      <span className={onlyShortFilms ? "filter-checkbox__circle filter-checkbox__circle_checked" : "filter-checkbox__circle"}></span>
+	      <span className={toggleView ? "filter-checkbox__circle filter-checkbox__circle_checked" : "filter-checkbox__circle"}></span>
       </label>
 			<p className="filter-checkbox__subtitle">Короткометражки</p>
     </div>

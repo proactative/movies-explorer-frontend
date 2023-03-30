@@ -1,12 +1,16 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import './SearchForm.css'
 import FilterCheckbox from '../FilterCheckbox/FilterCheckbox'
 
 function SearchForm(props) {
   const [isFormValid, setIsFormValid] = React.useState(false)
   const [movieRequest, setMovieRequest] = React.useState('')
+  let location = useLocation()
+  const inputValue = location.pathname === '/movies' ? JSON.parse(localStorage.getItem('movieRequest'))?.movieRequest : ''
 
   function handleInputChange(e) {
+    localStorage.removeItem('movieRequest')
     setMovieRequest(e.target.value)
 
     if (e.target.validity.valid) {
@@ -31,7 +35,7 @@ function SearchForm(props) {
           placeholder="Фильм"
           id="movie"
           onChange={handleInputChange}
-          value={movieRequest || ''}
+          value={inputValue || movieRequest} 
           name="movie"
         />
         <button
