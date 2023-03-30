@@ -4,6 +4,7 @@ import SearchForm from '../SearchForm/SearchForm'
 import Preloader from '../Preloader/Preloader'
 import MoviesCardList from '../MoviesCardList/MoviesCardList'
 import LazyLoading from '../LazyLoading/LazyLoading'
+import * as Info from '../../utils/constants'
 
 function Movies(props) {
   let [number, setNumber] = React.useState(getInitialNumber())
@@ -25,19 +26,19 @@ function Movies(props) {
 
   function getInitialNumber() {
     if (window.innerWidth >= 1201) {
-      return 12
+      return Info.INITIAL_CARD_NUMBER_LARGE_SCREEN
     } else if (window.innerWidth >= 768) {
-      return 8
+      return Info.INITIAL_CARD_NUMBER_MID_SCREEN
     } else {
-      return 5
+      return Info.INITIAL_CARD_NUMBER_SMALL_SCREEN
     }
   }
 
   function handleMoreFilms() {
     if (window.innerWidth < 769) {
-      setNumber((number += 2))
+      setNumber((number += Info.ADDITIONAL_CARD_NUMBER_MID_AND_SMALL_SCREEN))
     } else {
-      setNumber((number += 3))
+      setNumber((number += Info.ADDITIONAL_CARD_NUMBER_LARGE_SCREEN))
     }
     countedList = props.list.slice(0, number)
   }

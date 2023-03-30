@@ -278,7 +278,7 @@ function App() {
     if (JSON.parse(localStorage.getItem('onlyShortFilms')).onlyShortFilms) {
       setRenderedListMovies(
         JSON.parse(localStorage.getItem('MoviesList')).filteredMovies.filter(
-          (item) => item.duration < 40,
+          (item) => item.duration < Info.SHORT_MOVIES_DURATION_IN_MINUTES,
         ),
       )
     } else {
@@ -294,7 +294,7 @@ function App() {
     ) {
       setRenderedListSavedMovies(
         JSON.parse(localStorage.getItem('SavedMoviesList')).savedMovies.filter(
-          (item) => item.duration < 40,
+          (item) => item.duration < Info.SHORT_MOVIES_DURATION_IN_MINUTES,
         ),
       )
     } else {
