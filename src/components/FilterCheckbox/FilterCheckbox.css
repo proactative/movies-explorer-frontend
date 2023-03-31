@@ -67,11 +67,6 @@
    gap: 18px;
   }
 
-  .filter-checkbox__label {
-    width: 28px;
-    height: 20px;
-  }
-
   .filter-checkbox__subtitle {
     font-size: 11px;
     line-height: 1.64;
