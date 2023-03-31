@@ -5,7 +5,7 @@ import './FilterCheckbox.css';
 function FilterCheckbox(props) {
   const location = useLocation()
   const [onlyShortFilms, setOnlyShortFilms] = React.useState(false);
-  const toggleView = location.pathname === '/movies' ? JSON.parse(localStorage.getItem('onlyShortFilms')).onlyShortFilms : false 
+  const toggleView = location.pathname === '/movies' ? JSON.parse(localStorage.getItem('onlyShortFilms')).onlyShortFilms :  JSON.parse(localStorage.getItem('onlyShortSavedFilms')).onlyShortFilms
 
   function onChange() {
     if (location.pathname === '/movies') {

@@ -312,11 +312,17 @@ function App() {
 
   React.useEffect(() => {
     if (loggedIn) {
-      handleToggleSearchOnlyShortSavedFilms()
+      handleDownloadSavedMovies()
+      localStorage.setItem(
+        'onlyShortSavedFilms',
+        JSON.stringify({
+          onlyShortFilms: false,
+        }),
+      )
     } else {
       console.log('checking')
     }
-  }, [loggedIn])
+  }, [loggedIn, location])
 
   function handleToggleSearchShortFilms() {
     if (JSON.parse(localStorage.getItem('onlyShortFilms')).onlyShortFilms) {
@@ -424,12 +430,6 @@ function App() {
         return result
       })
       .then((result) => {
-        localStorage.setItem(
-          'SavedMoviesList',
-          JSON.stringify({
-            savedMovies: result,
-          }),
-        )
         setRenderedListSavedMovies(result)
       })
       .then(() => {
