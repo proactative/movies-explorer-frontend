@@ -29,7 +29,9 @@ function App() {
   let navigate = useNavigate()
   const [currentUser, setCurrentUser] = React.useState({ name: '', email: '' })
   const [burgerClicked, setBurgerClicked] = React.useState(false)
-  const [loggedIn, setLoggedIn] = React.useState(false)
+  const [loggedIn, setLoggedIn] = React.useState(
+    Boolean(localStorage.getItem('jwt')),
+  )
 
   //for InfoPopup
   const [infoPopupShown, setInfoPopupShown] = React.useState(false)
@@ -302,12 +304,11 @@ function App() {
 
   React.useEffect(() => {
     if (loggedIn) {
-    handleToggleSearchShortFilms()
+      handleToggleSearchShortFilms()
     } else {
       console.log('checking')
     }
   }, [loggedIn])
-
 
   React.useEffect(() => {
     if (loggedIn) {
@@ -316,7 +317,7 @@ function App() {
       console.log('checking')
     }
   }, [loggedIn])
-  
+
   function handleToggleSearchShortFilms() {
     if (JSON.parse(localStorage.getItem('onlyShortFilms')).onlyShortFilms) {
       setRenderedListMovies(
@@ -334,7 +335,7 @@ function App() {
   function handleToggleSearchOnlyShortSavedFilms() {
     if (
       JSON.parse(localStorage.getItem('onlyShortSavedFilms')).onlyShortFilms
-    ) { 
+    ) {
       setRenderedListSavedMovies(
         JSON.parse(localStorage.getItem('SavedMoviesList'))?.savedMovies.filter(
           (item) => item.duration < Info.SHORT_MOVIES_DURATION_IN_MINUTES,
