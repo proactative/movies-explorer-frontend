@@ -68,11 +68,9 @@ function Profile(props) {
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(currentUser)
     props.handleUpdateUserInfo(user, email)
     switchOffEditMode()
     setWasChanged(false)
-    console.log(currentUser)
   }
 
   return (

@@ -100,10 +100,6 @@ function App() {
           setIsActionSuccess(false)
           setInfoMessage(Info.MESSAGE_LOGIN_UNAUTHORISED)
           setInfoPopupShown(true)
-        } else if (err.status === 401) {
-          setIsActionSuccess(false)
-          setInfoMessage(Info.MESSAGE_TOKEN_ERROR)
-          setInfoPopupShown(true)
         } else {
           setIsActionSuccess(false)
           setInfoMessage(Info.MESSAGE_SERVER_ERROR)
@@ -121,7 +117,7 @@ function App() {
           setInfoMessage(Info.MESSAGE_REGISTOR_SUCCESS)
           setInfoPopupShown(true)
           setCurrentUser({ name: name, email: email })
-          navigate('/movies')
+
           return { ...res, password }
         }
       })
@@ -151,6 +147,7 @@ function App() {
             onlyShortFilms: false,
           }),
         )
+        navigate('/movies')
       })
       .catch((err) => {
         if (err.status === 409) {
@@ -311,7 +308,7 @@ function App() {
   }, [loggedIn])
 
   React.useEffect(() => {
-    if (loggedIn) {
+    if (localStorage.getItem('jwt')) {
       handleDownloadSavedMovies()
       localStorage.setItem(
         'onlyShortSavedFilms',
@@ -322,8 +319,9 @@ function App() {
     } else {
       console.log('checking')
     }
-  }, [loggedIn, location])
+  }, [location])
 
+  
   function handleToggleSearchShortFilms() {
     if (JSON.parse(localStorage.getItem('onlyShortFilms')).onlyShortFilms) {
       setRenderedListMovies(
