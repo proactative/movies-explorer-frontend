@@ -5,10 +5,17 @@
   background-color: var(--moviesCard-bg-color);
 }
 
+.movies-card {
+  height: 100%;
+  width: 100%;
+}
+
 .movies-card__info {
   display: flex;
   justify-content: space-between;
   padding: 14px;
+  box-sizing: border-box;
+  height: 25%;
 }
 
 .movies-card__about {
@@ -71,9 +78,21 @@
   background-image: url(../../images/movieChosenIcon.svg);
 }
 
+.movie-card__link {
+  opacity: 1;
+  cursor: pointer;
+  height: 75%;
+}
+
+.movie-card__link:hover {
+  opacity: 0.5;
+}
+
 .movies-card__image {
   width: 100%;
+  height: 75%;
   object-fit: cover;
+  object-position: center;
 }
 
 @media screen and (max-width: 1200px) {
@@ -89,3 +108,18 @@
     min-width: 300px;
   }
 }
+
+@media screen and (max-width: 420px) {
+  .movies-card__info {
+    height: 30%;
+  }
+
+  .movie-card__link {
+    height: 70%;
+  }
+
+  .movie-card__image {
+    height: 70%;
+  }
+}
+

@@ -1,12 +1,17 @@
 import React from 'react'
 import './InfoPopup.css'
 
-function InfoPopup() {
+function InfoPopup(props) {
   return (
-    <div className="info-popup">
+    <div className={props.className}>
       <div className="info-popup__text-area">
-        <h2 className="info-popup__text">Что-то пошло не так...</h2>
-        <button type="button" className="info-popup__close-button"  aria-label="кнопка закрытия" />
+        <h2 className={props.isActionSuccess ? "info-popup__text success" : "info-popup__text error" }>{props.infoMessage}</h2>
+        <button
+          type="button"
+          onClick={props.onCloseIconClick}
+          className="info-popup__close-button"
+          aria-label="кнопка закрытия"
+        />
       </div>
     </div>
   )

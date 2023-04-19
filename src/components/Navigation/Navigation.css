@@ -1,3 +1,4 @@
+
 .navigation__links {
   display: flex;
   padding: 4px 14px 0 0;
@@ -7,13 +8,24 @@
 .navigation__link {
   text-decoration: none;
   cursor: pointer;
-  color: var(--main-text-color);
   opacity: 1;
   transition: opacity 0.3s linear;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.29;
   text-align: center;
+  color: var(--main-text-color);
+}
+
+.navigation__link_promo {
+  color: var(--accent-text-color);
+}
+
+.navigation__link_promo:last-of-type {
+  border: 2px solid var(--secondary-bg-color);
+  border-radius: 20px;
+  width: 100px;
+  padding: 1px;
 }
 
 .active {
@@ -37,6 +49,15 @@
   align-items: center;
 }
 
+.navigation__link_profile_promo {
+  width: 96px;
+  margin-left: 48px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
 .navigation__span {
   display: inline-block;
   height: 30px;
@@ -47,6 +68,12 @@
   background-size: 15px;
   background-position: center;
   border-radius: 4px;
+}
+
+.navigation__span_promo {
+  background-image: url(../../images/promoProfileIcon.svg);
+  background-color: transparent;
+  background-size: 12px;
 }
 
 .navigation__link:hover {
@@ -65,6 +92,11 @@
   margin-top: -3px;
   cursor: pointer;
   transition: opacity.3s linear;
+}
+
+.navigation__burger-button_promo {
+  background-image: url(../../images/promoBurgerIcon.svg);
+  background-color: transparent;
 }
 
 .navigation__burger-button:hover {
